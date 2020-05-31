@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="module" src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.esm.js"></script>
+    <script nomodule src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core/css/ionic.bundle.css" />
+    <title>Document</title>
+</head>
+<body>
+    <ion-app>
+        <ion-content>
+            <ion-list>
+                <ion-item>
+                    Toggle
+                    <ion-toggle></ion-toggle>
+                </ion-item>
+            </ion-list>
+        </ion-content>
+        <ion-grid>
+            <ion-row>
+                <ion-col col-4></ion-col>
+                <ion-col col-4>
+                    <ion-button onclick="presentToast()">Toast</ion-button>
+                </ion-col>
+                <ion-col col-4></ion-col>
+            </ion-row>
+        </ion-grid>
+    </ion-app>
+</body>
+<script>
+    async function presentToast() {
+        const toast = document.createElement('ion-toast');
+        toast.message = 'Hello from Ionic! This is a simple example using a CDN with HTML/JS';
+        toast.duration = 2000;
+
+        document.body.appendChild(toast);
+        return toast.present();
+    }
+</script>
+</html>
